@@ -16,15 +16,53 @@
 import logging
 
 from flask import Flask
+from flask import jsonify
 
+# test data
+dummy0 = {
+    "photo_group": "乃木坂46",
+    "photo_member": "樋口日奈",
+    "photo_costume": "2019 summer concert 1",
+    "photo_type": "ヨリ",
+    "photo_number": 1,
+    "photo_folder": "summer concert",
+    "photo_tag": []
+}
+
+dummy1 = {
+    "photo_group": "乃木坂46",
+    "photo_member": "樋口日奈",
+    "photo_costume": "2019 summer concert 1",
+    "photo_type": "チュウ",
+    "photo_number": 3,
+    "photo_folder": "summer concert",
+    "photo_tag": []
+}
+
+dummy2 = {
+    "photo_group": "乃木坂46",
+    "photo_member": "樋口日奈",
+    "photo_costume": "2019 summer concert 1",
+    "photo_type": "ヒキ",
+    "photo_number": 1,
+    "photo_folder": "summer concert",
+    "photo_tag": []
+}
+
+photos = [dummy0, dummy1, dummy2]
 
 app = Flask(__name__)
-
+app.config["JSON_AS_ASCII"] = False
 
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
     return 'Hello World!'
+
+
+@app.route('/photos/all', methods=['GET'])
+def photos_all():
+    return jsonify(photos)
 
 
 @app.errorhandler(500)
