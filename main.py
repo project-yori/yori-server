@@ -15,10 +15,16 @@
 
 # [START app]
 import logging
+import psycopg2
 
 from flask import Flask
 from flask import jsonify
 
+# DB Connection
+conn = psycopg2.connect("host=34.97.189.196 dbname=photo user=root password=yori1234")
+cur = conn.cursor()
+
+  
 # test data
 dummy0 = {
     "photo_group": "乃木坂46",
@@ -64,6 +70,20 @@ def hello():
 @app.route('/photos/all', methods=['GET'])
 def photos_all():
     return jsonify(photos)
+
+
+@app.route('/create/photo', methods=['POST', 'GET'])
+def create_photo(): #生写真の追加
+    if request.method == 'POST': 
+        cur.execute("SELECT COUNT(id) FROM photo")
+        rows = cur.fetchall()
+        for row in rows:
+            ids = rows[0] + 1
+        cur.execute("INSERT INTO photos (photo_group, photo_member, photo_costume, photo_type, photo_number, photo_folder, photo_tag) VALUES (%s, %s, %s, %s, %d, %s, %s)", request.form['group'], request.form['member'], request.form['costume'], request.form['type'], request.form['number'], request.form['folder'], request.form['tag'])
+        cur.commit()
+        return redirect(url_for('display'))
+    else:
+        return render_template('add.html')
 
 
 @app.errorhandler(500)
