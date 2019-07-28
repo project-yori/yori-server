@@ -22,4 +22,3 @@ env_variables:
   DB_USER: USER
   DB_PASS: PASSWORD
   DB_NAME: DATABASE
-  
