@@ -32,6 +32,12 @@
   env FLASK_APP=main.py flask run
   ```
 
+  or if you want to enable network access to local server (especially when you are developing yori-view)
+  ```sh
+  env FLASK_APP=main.py flask run --host=0.0.0.0  
+  ```
+
+
 ## Deploy
 
 Before deploy to gcloud, you have to install gcloud sdk. ([Install guide](https://cloud.google.com/sdk/docs/quickstarts))
