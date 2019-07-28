@@ -18,6 +18,7 @@ import logging
 
 from flask import Flask
 from flask import jsonify
+from flask_cors import CORS
 
 # test data
 dummy0 = {
@@ -53,6 +54,7 @@ dummy2 = {
 photos = [dummy0, dummy1, dummy2]
 
 app = Flask(__name__)
+CORS(app)
 app.config["JSON_AS_ASCII"] = False
 
 @app.route('/')
