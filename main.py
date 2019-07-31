@@ -8,6 +8,8 @@ from flask_cors import CORS
 import sqlalchemy
 
 app = Flask(__name__)
+CORS(app)
+app.config["JSON_AS_ASCII"] = False
 
 logger = logging.getLogger()
 
@@ -30,7 +32,6 @@ db = sqlalchemy.create_engine(
 
 @app.route('/photo', methods=['GET'])
 def index():
-    db = connect_to_cloudsql()
     result = db.execute("select * from photos")
     return json.dumps([dict(data) for data in result])
 
