@@ -25,7 +25,18 @@
   ```sh
   pip install -r requirements.txt
   ```
+  
+- Create a `secret.yaml` (if you haven't) and set your own environment variable  
+**NOTICE: do not upload your `secret.yaml` to repository**
 
+```yaml
+env_variables:
+  CLOUD_SQL_CONNECTION_NAME: your-connection-name
+  DB_USER: your-account
+  DB_PASS: your-password
+  DB_NAME: your-database
+```
+    
 - Run
 
   ```sh
