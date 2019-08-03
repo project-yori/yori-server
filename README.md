@@ -29,13 +29,13 @@
 - Create a `secret.yaml` (if you haven't) and set your own environment variable  
 **NOTICE: do not upload your `secret.yaml` to repository**
 
-```yaml
-env_variables:
-  CLOUD_SQL_CONNECTION_NAME: your-connection-name
-  DB_USER: your-account
-  DB_PASS: your-password
-  DB_NAME: your-database
-```
+  ```yaml
+  env_variables:
+    CLOUD_SQL_CONNECTION_NAME: your-connection-name
+    DB_USER: your-account
+    DB_PASS: your-password
+    DB_NAME: your-database
+  ```
     
 - Run
 
@@ -53,8 +53,8 @@ env_variables:
 
 Before deploy to gcloud, you have to install gcloud sdk. ([Install guide](https://cloud.google.com/sdk/docs/quickstarts))
 
-### Deploy Command
+- Deploy Command
 
-```
-gcloud deploy
-```
+  ```sh
+  gcloud app deploy
+  ```
