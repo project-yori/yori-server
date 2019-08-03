@@ -25,9 +25,9 @@
   ```sh
   pip install -r requirements.txt
   ```
-  
-- Create a `secret.yaml` (if you haven't) and set your own environment variable  
-**NOTICE: do not upload your `secret.yaml` to repository**
+
+- Create a `secret.yaml` (if you haven't) and set your own environment variable
+  **NOTICE: do not upload your `secret.yaml` to repository**
 
   ```yaml
   env_variables:
@@ -35,8 +35,9 @@
     DB_USER: your-account
     DB_PASS: your-password
     DB_NAME: your-database
+    SLACK_WEBHOOK_URL: slack-webhook-url
   ```
-    
+
 - Run
 
   ```sh
@@ -44,10 +45,10 @@
   ```
 
   or if you want to enable network access to local server (especially when you are developing yori-view)
-  ```sh
-  env FLASK_APP=main.py flask run --host=0.0.0.0  
-  ```
 
+  ```sh
+  env FLASK_APP=main.py flask run --host=0.0.0.0
+  ```
 
 ## Deploy
 
