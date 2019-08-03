@@ -110,3 +110,5 @@ venv.bak/
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# yaml
+secret.yaml
