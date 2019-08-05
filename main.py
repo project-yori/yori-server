@@ -8,6 +8,7 @@ from flask_cors import CORS
 import sqlalchemy
 import requests
 
+from apis import api
 
 def onGAE():
     return os.getenv('GAE_ENV', '').startswith('standard')
@@ -15,6 +16,7 @@ def onGAE():
 
 app = Flask(__name__)
 CORS(app)
+api.init_app(app)
 app.config['JSON_AS_ASCII'] = False
 
 db_user = os.environ.get('DB_USER')

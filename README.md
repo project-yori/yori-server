@@ -30,7 +30,7 @@
 - Install and launch [Cloud SQL Proxy](https://cloud.google.com/sql/docs/mysql/sql-proxy)
 
   ```sh
-  cloud_sql_proxy -dir=/tmp/cloudsql -instances=yori_instance_name=tcp:3306
+  ./cloud_sql_proxy -dir=/tmp/cloudsql -instances=yori_instance_name=tcp:3306
   ```
 
 - Launch server
