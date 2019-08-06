@@ -25,7 +25,7 @@ MEMBERS = [
 
 @api.route('/')
 class MemberList(Resource):
-    @api.doc('list members')
+    @api.doc('get_members')
     @api.marshal_list_with(member)
     def get(self):
         return MEMBERS
