@@ -1,11 +1,11 @@
 from flask_restplus import Api
-from .cat import api as cat
+from .member import api as member
 
 api = Api(
-    title='My Title',
+    title='Yori API',
     version='1.0',
-    description='A description',
+    description='API Documentation',
     # All API metadatas
 )
 
-api.add_namespace(cat)
+api.add_namespace(member)

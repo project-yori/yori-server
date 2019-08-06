@@ -36,13 +36,13 @@
 - Launch server
 
   ```sh
-  env FLASK_APP=main.py DB_USER=username DB_PASS=password DB_NAME=database_name CLOUD_SQL_CONNECTION_NAME=yori_instance_name flask run
+  env FLASK_APP=main.py DB_USER=username DB_PASS=password CLOUD_SQL_CONNECTION_NAME=yori_instance_name flask run
   ```
 
   or if you want to enable network access to local server (especially when you are developing yori-view)
 
   ```sh
-  env FLASK_APP=main.py DB_USER=username DB_PASS=password DB_NAME=database_name CLOUD_SQL_CONNECTION_NAME=yori_instance_name flask run --host=0.0.0.0
+  env FLASK_APP=main.py DB_USER=username DB_PASS=password CLOUD_SQL_CONNECTION_NAME=yori_instance_name flask run --host=0.0.0.0
   ```
 
   If setting environments bothers you, write them in your dotfiles.

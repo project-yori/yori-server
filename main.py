@@ -1,7 +1,6 @@
 import datetime
 import logging
 import os
-import json
 
 from flask import Flask
 from flask_cors import CORS
@@ -53,7 +52,6 @@ logger.setLevel(logging.INFO)
 
 db = sqlalchemy.create_engine(connection_string)
 
-
 # TODO:
 # We should create a package and move this into __init__.py of that package
 def notify():
@@ -66,15 +64,6 @@ def notify():
             project_id, gae_version, gae_instance)
         logger.info(message)
         requests.post(slack_webhook_url, json={'text': message})
-
-
-# TODO:
-# We should create a package and move this into that package
-@app.route('/photo', methods=['GET'])
-def index():
-    result = db.execute('select * from photos')
-    return json.dumps([dict(data) for data in result])
-
 
 # TODO:
 # We should create a package and move this into __init__.py of that package
