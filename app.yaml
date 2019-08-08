@@ -7,4 +7,4 @@ env_variables:
   CLOUD_SQL_CONNECTION_NAME: your-connection-name
   DB_USER: USER
   DB_PASS: PASSWORD
-  DB_NAME: DATABASE
+  DB_NAME: yori_database
