@@ -13,6 +13,6 @@ class PhotoController {
     @ApiOperation(value = "photo Endpoint", notes = "photo related api")
     fun hello(): Photo {
 
-    return Photo("groupA","memberA","costume","yori",1,"all");
-}
+        return Photo("groupA", "memberA", "costume", "yori", 1, "all");
+    }
 }
