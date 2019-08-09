@@ -9,5 +9,5 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2
 class YoriServerApplication
 
 fun main(args: Array<String>) {
-	runApplication<YoriServerApplication>(*args)
+    runApplication<YoriServerApplication>(*args)
 }
